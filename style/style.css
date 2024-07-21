@@ -18,9 +18,10 @@ input{
 button{
     width: auto;
     height: 30px;
+    border-radius: 5px;
 }
 
-.b1,.b2{
+.b1{
     background-color: #201E43;
     color: white;
 }
