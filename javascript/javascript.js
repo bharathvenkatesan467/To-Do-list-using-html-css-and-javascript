@@ -1,53 +1,11 @@
 
-// function add(){
-//     var messa=document.getElementById("add").addlist.value;
-//     messa.innerHTML='';
-
-// }
-// function remove(){
-//     var messa=document.getElementById("add");
-//     messa.remove();
-// }
-
-// function mul(a,b=1){
-//     return a*b;
-// }
-// console.log(mul(5));
-
-let val=[];
-
-document.getElementById('b1').addEventListener('click',add);
-
-function add(){
-    let inn=document.getElementById('input1');
-    let ad=inn.value.trim();
-    if(ad!==''){
-        val.push(ad);
-        inn.val='';
-        del();
+function add() {
+    const t = document.getElementById("t1").value;
+    if (t.length > 0) {
+        document.getElementById("t2").innerHTML += "<div class='task' style='margin-top:10px;'>"+"<span style='border:2px solid black; margin-top:5px; padding:5px 30px 5px 5px;  border-radius:5px; '>"+t+"</span>"+ "<button onclick='del(this)' style='background-color:black; color:white; margin-left:30px; height:30px; border-radius:5px;'>DELETE</button></div>";
     }
+    document.getElementById("t1").value = "";
 }
-
-function del()
-{
-    let inevent=document.getElementById('add');
-    inevent.innerHTML='';
-
-    val.forEach((val,index) => {
-        let valelement=document.createElement('li');
-        valelement.textContent = task;
-
-        let deletebt1=document.createElement('button');
-        deletebt1.className = 'deleteb2';
-        deletebt1.textContent='Delete';
-        deletebt1.addEventListener('click', ()=>{
-            val.splice(index,1);
-            del();
-        });
-
-        valelement.appendChild(deletebt1);
-        inevent.appendChild(valelement);
-    })
+function del(element) {
+    element.parentElement.remove();
 }
-
-del();
